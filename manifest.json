@@ -1,0 +1,37 @@
+{
+    "name": "YouTube Keyboard Only",
+    "version": "1.0",
+    "description": "Navigate and control YouTube using only your keyboard",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "css": ["content.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "commands": {
+        "search": {
+            "suggested_key": {
+                "mac": "Alt+L"
+            },
+            "description": "Focus the YouTube search bar"
+        },
+        "cycle_down": {
+            "suggested_key": {
+                "mac": "Alt+Tab"
+            },
+            "description": "Set focus to the next video in results feed"
+        },
+        "cycle_up": {
+            "suggested_key": {
+                "mac": "Alt+Shift+Tab"
+            },
+            "description": "Set focus to the previous video in results feed"
+        }
+    }
+}
